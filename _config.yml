@@ -1,6 +1,7 @@
 menu:
     Blog: /
     Archive: /archives/
+    Category: /categories/
     GitHub: https://github.com/aiellochan
     Rss: /atom.xml
 
@@ -14,7 +15,7 @@ duoshuo:
 
 # Analytics
 # google-analytics:
-ga: UA-65933410-1
+ga:
 
 # Copyright Infomation
-startyear: 2015
+startyear: 2018

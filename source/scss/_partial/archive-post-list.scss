@@ -23,4 +23,17 @@
         width: 125px;
         color: #7f8c8d;
     }
+    .category-title-link {
+        font-size: 1rem;
+    }
+    .category-title-link {
+        display: block;
+        margin-left: 50px;                
+        color: #42b983;
+        word-break: keep-all;
+        &:hover {
+            border-bottom: 0;
+            color: #267B54;
+        }
+    }
 }

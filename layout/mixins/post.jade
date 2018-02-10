@@ -36,6 +36,15 @@ mixin postList()
                     != item.title
         - })
 
+//- Categories Page
+mixin categorieList()
+    .archive
+        h2.archive-year!= __('categories')
+        - site.categories.each(function (item) {
+            a.category-title-link(href= url_for(item.path))
+                != item.name + ' (' + item.length + ') '
+        - })
+
 //- Post Page
 mixin post(item)
     .post

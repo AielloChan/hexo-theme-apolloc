@@ -4,6 +4,14 @@ mixin postInfo(item)
         if item.from && (is_home() || is_post())
             a.post-from(href=item.from target="_blank" title=item.from)!= __('translated')
 
+mixin postInfoFull(item)
+    .post-info
+        != full_date(item.date, 'lll')
+        if item.updated && item.updated > item.date
+            != ' · ' + __('updated') + ' ' + full_date(item.updated, 'lll')
+        if item.from && (is_home() || is_post())
+            a.post-from(href=item.from target="_blank" title=item.from)!= __('translated')
+
 //- Index Page
 mixin posts()
     ul.home.post-list
@@ -51,6 +59,6 @@ mixin post(item)
         article.post-block
             h1.post-title
                 != item.title
-            +postInfo(item)
+            +postInfoFull(item)
             .post-content
                 != item.content

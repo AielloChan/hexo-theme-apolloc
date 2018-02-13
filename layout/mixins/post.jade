@@ -7,8 +7,14 @@ mixin postInfo(item)
 mixin postInfoFull(item)
     .post-info
         != full_date(item.date, 'lll')
-        if item.updated && item.updated > item.date
+        - if (item.updated.isAfter('8999-12-31 23:59:59')) {
+        -    item.top = true
+        -    item.updated = item.updated.subtract(7000, 'y')
+        - }
+        if !item.hideUpdated && item.updated > item.date
             != ' · ' + __('updated') + ' ' + full_date(item.updated, 'lll')
+        if item.top
+            a.stick-top!= __('top')
         if item.from && (is_home() || is_post())
             a.post-from(href=item.from target="_blank" title=item.from)!= __('translated')
 

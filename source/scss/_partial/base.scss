@@ -22,6 +22,20 @@ ul.post-list {
     margin: 0;
     padding: 0;
     list-style-type: none;
+    .post-content {
+        h2, h3, h4, h5, h6 {
+            a:before {
+                content: "#";
+                color: #42b983;
+                position: inherit;
+                left: 0;
+                top: 0;
+                margin-right: 0.5rem;
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+        }
+    }
 }
 
 ul {
